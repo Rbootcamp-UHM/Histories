@@ -27,18 +27,23 @@ Git is a free open-source version control system. You can copy repositories of f
    cd ʻC:/path to my directory/Rclassʻ 
    ```
 
-4. Clone the repository. Type the line below, hit return, and it will create a folder called `Histories` in your working directory that contains a copy of all the files currently at that location on the server. 
+4. Clone the repository. Type the line below, hit return, and it will create a folder called `Histories` in your working directory that contains a copy of all the files currently at that location on the server. Note this will create a new copy of the whole directory, so you only do this the first time. 
 
     ```
     git clone https://github.com/Rbootcamp-UHM/Histories.git
     ```
  
-5. Update the repository. Later when Iʻve added more files, do the following. Open your terminal and navigate to the Histories folder:
+5. Update the repository. Later when Iʻve added more files, do the following to add the new files from the server to your local directory.   
+      1. Open your terminal and navigate to within your Histories folder:
 
-    ```
-    cd ~/Rclass/Histories
-    git pull origin master
-    ```
+      ```
+      cd ~/Rclass/Histories
+      ```
+      2. Update the repository:
+
+      ```
+      git pull origin master
+      ```
    Voila! All the new files have been added to your local directory. The last line tells git to pull any new changes from the origin (the server where I am putting all the files) to the master (your local directory). 
 
 6. If you want to check if all is up to date:
@@ -47,6 +52,6 @@ Git is a free open-source version control system. You can copy repositories of f
    git status
    ```
    
-   If everyting is up to date t will say `Your branch is up-to-date with 'origin/master'. nothing to commit, working tree clean`
+   If everyting is up to date it will say `Your branch is up-to-date with 'origin/master'. nothing to commit, working tree clean`
 
 7. Note: Git works directory by directory (it saves a hidden status file within the cloned directory).  If you want to clone the Data directory, for example, you will have to repeat steps 3-> for the Data directory and each directory you want to clone. 
