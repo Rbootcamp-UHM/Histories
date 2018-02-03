@@ -33,7 +33,7 @@ Git is a free open-source version control system. You can copy repositories of f
     git clone https://github.com/Rbootcamp-UHM/Histories.git
     ```
  
-5. Later when Iʻve added more files, do the following. Open your terminal and navigate to the Histories folder:
+5. Update the repository. Later when Iʻve added more files, do the following. Open your terminal and navigate to the Histories folder:
 
     ```
     cd ~/Rclass/Histories
