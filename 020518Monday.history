@@ -1,0 +1,121 @@
+?save
+setwd("Rclass")
+ls
+list.files()
+list.files("Data")
+read.csv("Data/anolis.csv")
+?read.csv
+read.csv("Data/anolis.csv", sep=";")
+dat <- read.csv("Data/anolis.csv", sep=";")
+head(dat)
+?head
+tail(dat)
+dat
+dat <- read.csv("Data/anolis.csv", sep=";")
+aggregate( dat$logSSD, by=list(dat$ecomorph), mean)
+class (dat)
+class (dat$ecomorph)
+dat$ecomorph
+list(dat$ecomorph)
+class( list(dat$ecomorph))
+?aggregate
+anolis.mean <- aggregate( dat$logSSD, by=list(dat$ecomorph), mean)
+anolis.mean
+aggregate( dat$logSSD, by=list(dat$ecomorph), sd)
+anolis.sd <- aggregate( dat$logSSD, by=list(dat$ecomorph), sd)
+names(anolis.mean)
+names(anolis.mean) <- c("ecomorph", "mean")
+anolis.mean
+names(anolis.sd) <- c("ecomorph", "sd")
+anolis.sd
+aggregate( dat$logSSD, by=list(dat$ecomorph), length)
+length( dat$ecomorph=="crown-giant")
+sum( dat$ecomorph=="crown-giant")
+anolis.N <- aggregate( dat$logSSD, by=list(dat$ecomorph), length)
+names(anolis.N)  <- c("ecomorph", "N")
+anolis.N
+merge(anolis.mean, anolis.sd)
+out <-  merge( anolis.mean, anolis.sd, by="ecomorph")
+out
+out <-  merge( out, anolis.N, by="ecomorph")
+out
+anolis.N <- aggregate( dat$logSSD, by=list(dat$ecomorph), length)
+anolis.N
+out <-  merge( out, anolis.N, by="ecomorph")
+names(anolis.N)  <- c("ecomorph", "N")
+out <-  merge( out, anolis.N, by="ecomorph")
+out
+out[-5]
+out <- out[-5]
+names(out)
+names(out)[4]
+names(out)[4] <- "N"
+out
+out.se <- out$sd / sqrt( out$N)
+out.se
+out$se <- out$sd / sqrt( out$N)
+out
+dat <- read.csv("Data/anolis.csv", sep=";")#
+head(dat)#
+?head#
+tail(dat)#
+dat#
+dat <- read.csv("Data/anolis.csv", sep=";")#
+aggregate( dat$logSSD, by=list(dat$ecomorph), mean)#
+class (dat)#
+class (dat$ecomorph)#
+dat$ecomorph#
+list(dat$ecomorph)#
+class( list(dat$ecomorph))#
+?aggregate#
+anolis.mean <- aggregate( dat$logSSD, by=list(dat$ecomorph), mean)#
+anolis.mean#
+aggregate( dat$logSSD, by=list(dat$ecomorph), sd)#
+anolis.sd <- aggregate( dat$logSSD, by=list(dat$ecomorph), sd)#
+names(anolis.mean)#
+names(anolis.mean) <- c("ecomorph", "mean")#
+anolis.mean#
+names(anolis.sd) <- c("ecomorph", "sd")#
+anolis.sd#
+aggregate( dat$logSSD, by=list(dat$ecomorph), length)#
+length( dat$ecomorph=="crown-giant")#
+sum( dat$ecomorph=="crown-giant")#
+anolis.N <- aggregate( dat$logSSD, by=list(dat$ecomorph), length)#
+names(anolis.N)  <- c("ecomorph", "N")#
+anolis.N#
+merge(anolis.mean, anolis.sd)#
+out <-  merge( anolis.mean, anolis.sd, by="ecomorph")#
+out#
+out <-  merge( out, anolis.N, by="ecomorph")#
+out#
+anolis.N <- aggregate( dat$logSSD, by=list(dat$ecomorph), length)#
+anolis.N#
+out <-  merge( out, anolis.N, by="ecomorph")#
+names(anolis.N)  <- c("ecomorph", "N")#
+out <-  merge( out, anolis.N, by="ecomorph")#
+out#
+out[-5]#
+out <- out[-5]#
+names(out)#
+names(out)[4]#
+names(out)[4] <- "N"#
+out#
+out.se <- out$sd / sqrt( out$N)#
+out.se#
+out$se <- out$sd / sqrt( out$N)#
+out
+barplot(out$ecomorph, out$mean)
+barplot(out$mean, out$ecomorph)
+out
+bb <- barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue", "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+barplot(out$mean, names.arg=out$ecomorph, col=rainbow(6), ylab="logSSD")
+rainbow(6)
+barplot(out$mean, names.arg=out$ecomorph, col="red", ylab="logSSD")
+barplot(out$mean, names.arg=out$ecomorph, col=c("red", "blue", ylab="logSSD")
+barplot(out$mean, names.arg=out$ecomorph, col=c("red", "blue"), ylab="logSSD")
+barplot(out$mean, names.arg=out$ecomorph, col=c("red", "blue"), ylab="logSSD")
+barplot(out$mean, names.arg=out$ecomorph, col=c(rep("red", times=3), rep("blue", times=3), ylab="logSSD")
+)
+barplot(out$mean, names.arg=out$ecomorph, col=c(rep("red", times=3), rep("blue", times=3)), ylab="logSSD")
+c(rep("red", times=3), rep("blue", times=3))
+rainbow(6)
