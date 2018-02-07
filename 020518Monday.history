@@ -1,6 +1,3 @@
-?save
-setwd("Rclass")
-ls
 list.files()
 list.files("Data")
 read.csv("Data/anolis.csv")

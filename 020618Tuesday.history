@@ -1,0 +1,126 @@
+## Read in data#
+#
+anolis <- read.csv("Data/anolis.csv")#
+#
+## Compute summary statistics on dataframe anolis#
+#
+anolis.mean <- aggregate(anolis$logSSD, by=list(anolis$ecomorph), mean)#
+anolis.sd <- aggregate(anolis$logSSD, by=list(anolis$ecomorph), sd)#
+anolis.N <- aggregate(anolis$logSSD, by=list(anolis$ecomorph), length)#
+#
+## Change column names for each dataframe#
+#
+names(anolis.mean) <- c("ecomorph", "mean")#
+names(anolis.sd) <- c("ecomorph", "sd")#
+names(anolis.N) <- c("ecomorph", "N")#
+#
+## Merge the output together into one summary dataframe#
+#
+out <- merge(anolis.mean, anolis.sd, by="ecomorph")#
+out <- merge(out, anolis.N, by="ecomorph")#
+out.se <- anolis.sd/sqrt(anolis.N)
+anolis <- read.csv("Data/anolis.csv", sep=";")#
+#
+## Compute summary statistics on dataframe anolis#
+#
+anolis.mean <- aggregate(anolis$logSSD, by=list(anolis$ecomorph), mean)#
+anolis.sd <- aggregate(anolis$logSSD, by=list(anolis$ecomorph), sd)#
+anolis.N <- aggregate(anolis$logSSD, by=list(anolis$ecomorph), length)
+anolis
+names(anolis.mean) <- c("ecomorph", "mean")#
+names(anolis.sd) <- c("ecomorph", "sd")#
+names(anolis.N) <- c("ecomorph", "N")#
+#
+## Merge the output together into one summary dataframe#
+#
+out <- merge(anolis.mean, anolis.sd, by="ecomorph")#
+out <- merge(out, anolis.N, by="ecomorph")#
+out.se <- anolis.sd/sqrt(anolis.N)#
+#
+## Save dataframe to csv and output objects to .Rdata file#
+#
+write.csv(out, "anolis.summary.csv", row.names=FALSE)#
+save( anolis, anolis.mean, anolis.sd, anolis.N, out, file="anolis.out.Rdata")#
+#
+## Make plots and add error bars#
+#
+barplot(out$mean, names.arg=out$ecomorph)
+barplot(out$mean, names.arg=out$ecomorph, col=rainbow(6), ylab="logSSD")
+bb <- barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue",  "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue",  "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+bb <- barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue",  "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+?par
+arrows(bb, out$mean, bb, out$mean+out$se, angle=90)
+out$mean
+out$se
+out$se <- anolis.sd/sqrt(anolis.N)
+out
+out$se <- out$sd/sqrt(out$N)
+out
+bb <- barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue",  "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue",  "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+out$ecomorph
+out$mean
+bb <- barplot(out$mean, names.arg=out$ecomorph, col=c("red", "red", "red", "blue", "blue", "red"), ylab="logSSD", cex.lab=1.5, ylim=c(0, max(out$mean)+.1))
+b
+bb
+arrows(bb, out$mean, bb, out$mean+out$se, angle=90)
+?arrows
+arrows(bb, out$mean, bb, out$mean+out$se, angle=30)
+source("anolis_script.R")
+dat
+anolis
+anolis[ ecomorph == "trunk" , ]
+anolis[ anolis$ecomorph == "trunk" , ]
+anolis[ anolis$ecomorph != "trunk" , ]
+anolis[ anolis$ecomorph < "trunk" , ]
+anolis
+rbind(anolis, NA)
+anolis1 <- rbind(anolis, NA)
+anolis1
+anolis[ anolis$ecomorph == "trunk" , ]
+anolis[ anolis$ecomorph == NA , ]
+anolis[ is.na(anolis$ecomorph) , ]
+anolis1[ is.na(anolis1$ecomorph) , ]
+anolis1[ !is.na(anolis1$ecomorph) , ]
+anolis[ , "ecomorph"]
+anolis[ anolis$logSSD > .2 , "ecomorph"]
+anolis[ anolis$logSSD > .2 , ]
+anolis$ecomorph
+anolis$ecomorph == "trunk"
+rbind( anolis$ecomorph, anolis$ecomorph == "trunk")
+rbind( as.character(anolis$ecomorph), anolis$ecomorph == "trunk")
+cbind( as.character(anolis$ecomorph), anolis$ecomorph == "trunk")
+anolis$ecomorph [anolis$ecomorph == "trunk"]
+anolis$ecomorph [c(15, 16, 22)]
+anolis$ecomorph [-c(15, 16, 22)]
+anolis$ecomorph [c(-15, -16, -22)]
+rm(list=ls())
+require(geiger)
+data(geospiza)
+ls()
+geospiza
+class(geospiza)
+attributes(geospiza)
+length(geospiza)
+geospiza$dat
+geo <- geospiza$dat
+geo
+dim(geo)
+attributes(geo)
+names(geo)
+class(geo)
+write.csv("geo.csv")
+write.csv(geo, file="geo.csv")
+geo["pauper", "wingL"]
+geo
+rownames(geo)
+geo[ʻpauperʻ,]
+geo["pauper",]
+mylist <- list( vec = 2*1:10, mat = matrix(1:10, nrow=2), cvec = c("frogs", "birds")
+)
+dim(mylist)
+length(mylist)
+mylist
+mylist[[1]]
+mylist[1]
