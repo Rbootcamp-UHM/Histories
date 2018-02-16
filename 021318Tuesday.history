@@ -1,0 +1,255 @@
+?save
+install.packages("ouch")
+?split
+splitstr
+?splitstr
+??split
+?sub
+help.start()
+mysq <- function( x, yylab="Square of x" ) {   # default argument for the y-label#
+#
+	plot( x, x*x, ylab=yylab)	#
+	return (x*x)   	#
+#
+	}
+mysq <- function( x, yylab ) {   # default argument for the y-label#
+#
+	plot( x, x*x, ylab=yylab)	#
+	return (x*x)   	#
+#
+	}
+mysq( 10)
+mysq( 10, "sq")
+mysq( 1:10, "sq")
+mysq <- function( x, yylab="Square of x" ) {   # default argument for the y-label#
+#
+	plot( x, x*x, ylab=yylab)	#
+	return (x*x)   	#
+#
+	}
+mysq( 1:10)
+mysq( 1:10, "SQUARES")
+mysq( "SQUARES", 1:10)
+mysq( yylab="SQUARES", x=1:10)
+myfun <- function(x, y,  ...) {#
+	plot(x, y, ...)#
+	}
+myfun( 1:10, sqrt(1:10), col="red", type="l", lwd=5, lty=2)
+myfun( 1:10, sqrt(1:10), col="red", type="l", lwd=15, lty=2)
+summary
+methods(ʻsummmaryʻ)
+methods("summary")
+summary.factor
+ls()
+mean <- 10
+ls()
+mean(1:10)
+mean + 2
+search()
+read.spec <- function ( myfile )  {  #
+	dat <- read.table(file=myfile, skip=17, comment.char=">")#
+	names(dat) <- c("lambda", "intensity")#
+	dat <- dat[ dat$lambda >= 300 & dat$lambda <= 750,   ]#
+	return (dat)#
+}
+dat1 <- read.spec( "Data/20070725_01forirr.txt"  )#
+dat2 <- read.spec( "Data/20070725_01upirr.txt"  )#
+dat3 <- read.spec( "Data/20070725_01rightirr.txt"  )#
+dat4 <- read.spec( "Data/20070725_01leftirr.txt"  )
+setwd("Rclass")
+dat1 <- read.spec( "Data/20070725_01forirr.txt"  )#
+dat2 <- read.spec( "Data/20070725_01upirr.txt"  )#
+dat3 <- read.spec( "Data/20070725_01rightirr.txt"  )#
+dat4 <- read.spec( "Data/20070725_01leftirr.txt"  )
+dat1
+head(dat1)
+plot(dat1, type="l")
+plot(dat2, type="l")
+max(dat1$intensity)
+max_intensity <- max(dat1$intensity)   # use indexing to find the lambda @max intensity
+dat1$intensity  == max_intensity
+dat1$lambda[ dat1$intensity  == max_intensity ]
+plot(dat1, type="l")
+points(max_lambda, max_intensity, col="red", cex=3, pch=19)
+dat1$lambda[ dat1$intensity  == max_intensity ]
+points(max_lambda, max_intensity, col="red", cex=3, pch=19)
+max_lambda <- dat1$lambda[ dat1$intensity  == max_intensity ]
+points(max_lambda, max_intensity, col="red", cex=3, pch=19)
+plot.spec <- function( dat1 ) {#
+#
+    plot(dat1, type="l")#
+	max_intensity <- max(dat1$intensity)   # use indexing to find the lambda @max intensity#
+	max_lambda <- dat1$lambda[ dat1$intensity  == max_intensity ]#
+    points(max_lambda, max_intensity, col="red", cex=3, pch=19)  #
+    return(c(max_lambda, max_intensity))#
+}
+plot.spec(dat1)
+plot.spec(dat2)
+plot.spec(dat3)
+plot.spec(dat4)
+plot.spec(dat1)
+plot.spec(dat4)
+plot.spec <- function( X ) {#
+#
+    plot(X, type="l")#
+	max_intensity <- max(X$intensity)   # use indexing to find the lambda @max intensity#
+	max_lambda <- X$lambda[ dat1$intensity  == max_intensity ]#
+    points(max_lambda, max_intensity, col="red", cex=3, pch=19)  #
+    return(c(max_lambda, max_intensity))#
+} #
+	## What should we return for our final dataframe of max intensity, lambda?
+plot.spec(dat4)
+X
+list.files("Data/")
+myfiles <- list.files("Data/")
+grep("irr.txt", myfiles, value=T)
+myfiles <- grep("irr.txt", myfiles, value=T)
+read.spec <- function ( myfile )  {  #
+	dat <- read.table(file=myfile, skip=17, comment.char=">")#
+	names(dat) <- c("lambda", "intensity")#
+	dat <- dat[ dat$lambda >= 300 & dat$lambda <= 750,   ]#
+	return (dat)#
+}
+plot.spec <- function( X ) {#
+#
+    plot(X, type="l")#
+	max_intensity <- max(X$intensity)   # use indexing to find the lambda @max intensity#
+	max_lambda <- X$lambda[ X$intensity  == max_intensity ]#
+    points(max_lambda, max_intensity, col="red", cex=3, pch=19)  #
+    return(c(max_lambda, max_intensity))#
+}
+read.spec(myfiles[1])
+myfiles[1]
+for (i in 1:10) print( i )
+for (i in 1:10) print( paste("this is i", i ))
+for (day in c(“m”,”t”,”w”,”r”,”f”)) print(day)
+for (day in c(ʻmʻ,ʻtʻ,ʻwʻ,ʻrʻ,ʻfʻ)) print(day)
+for (day in c("m","t","w","r","f")) print(day)
+LETTERS
+for (alpha in LETTERS) print(alpha)
+mylist#
+for (i in 1:4) {#
+   mylist[i] <- list(data.frame(x=rnorm(3), y=rnorm(3)))  ## why does this have to be a list object?#
+}
+mylist <- vector("list")   ## creates a null (empty) list
+mylist
+mylist#
+for (i in 1:4) {#
+   mylist[i] <- list(data.frame(x=rnorm(3), y=rnorm(3)))  ## why does this have to be a list object?#
+}
+mylist
+mylist <- vector("list")   ## creates a null (empty) list#
+for (i in 1:4) {#
+   mylist <- c(mylist, list(data.frame(x=rnorm(3), y=rnorm(3))))#
+}
+mylist
+unlist(mylist)
+lm.out <- lm( mylist[[1]]$x  ~ mylist[[1]]$y )
+mylist[[1]]
+mylist[[1]]$x
+lm.out <- lm( mylist[[1]]$x  ~ mylist[[1]]$y )
+aov.out <- anova(lm.out)
+class(lm.out)
+class(aov.out)
+unlist(aov.out)
+length(mylist)
+names(mylist)  <- LETTERS[1: length(mylist)]
+names(mylist)
+1: length(mylist)
+LETTERS[1: length(mylist)]
+mylist
+for ( i in mylist )  {  mylist[i] }
+mylist$
+mylist$A
+mylist$A
+i = mylist$A
+mylist[i]
+mylist[1]
+i
+for (i in 1:4) {#
+   mylist[i] <- list(data.frame(x=rnorm(3), y=rnorm(3)))  ## why does this have to be a list object?#
+}
+mylist
+mylist[[1]]$y
+mylist[[1]][,2]
+mylist[[1]][,"y"]
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   print( c(max_x, max_y))   #
+   }
+mylist
+?vector
+out_list <- vector("list")#
+#
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- c(out_list, list(out))#
+   print( out_list )   #
+   }
+out_list
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- c(out_list, list(out))#
+   print( out)   #
+   }
+out_list
+out_list <- vector("list")#
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- c(out_list, list(out))#
+   print( out)   #
+   }
+out_list
+out_list <- vector("list")#
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- rbind(out_list, list(out))#
+   print( out)   #
+   }
+out_list
+out_list <- vector("list")#
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- rbind(out_list, list(out))#
+   print( paste("This is iteration", i))#
+   print( out )   #
+   print( out_list )#
+   }
+out_list <- vector("list")#
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- c(out_list, list(out))#
+   print( paste("This is iteration", i))#
+   print( out )   #
+   print( out_list )#
+   }
+out_list <- vector("list")#
+for (i in 1:4) {#
+   max_x <- max(mylist[[i]]$x)#
+   max_y <- max(mylist[[i]]$y)#
+#
+   out <- c(max_x, max_y)#
+   out_list <- c(out_list, list(out))#
+   print( paste("This is iteration", i))#
+   print( out_list )#
+   }
