@@ -1,0 +1,132 @@
+?Control
+F <- M <- 1#
+N <- 4
+while (M <= N) {#
+	M <- M+1 #
+	F <- F*M	#
+}
+F
+while (M < N) {#
+	M <- M+1 #
+	F <- F*M	#
+}
+F
+F <- M <- 1#
+N <- 4#
+#
+while (M < N) {#
+	M <- M+1 #
+	F <- F*M	#
+}
+F
+F <- M <- 1#
+N <- 4#
+#
+while (M < N) {#
+	F <- F* (M+1)#
+	M <- M+1
+}
+F <- M <- 1#
+N <- 4#
+while (M < N) {#
+	M <- M+1 #
+	F <- F*M	#
+	print( F )#
+}
+F <- M <- 1#
+N <- 4#
+#
+repeat {#
+	M <- M+1 #
+	F <- F*M	#
+	print( F )#
+    if (M >=4   )  {break}#
+}
+if (M >=N   )  {break}
+F <- M <- 1#
+N <- 4#
+#
+repeat {#
+	M <- M+1 #
+	F <- F*M	#
+	print( F )#
+    if (M >=N   )  {break}#
+}
+function ( N ) {#
+    F <- M <- 1#
+	repeat {#
+		M <- M+1 #
+		F <- F*M	#
+		print( F )#
+	    if (M >=N   )  {break}#
+	}#
+}
+myfactor(4)
+myfactor <- function ( N ) {#
+    F <- M <- 1#
+	repeat {#
+		M <- M+1 #
+		F <- F*M	#
+		print( F )#
+	    if (M >=N   )  {break}#
+	}#
+}
+myfactor(4)
+myfactor(3)
+myfactor(10)
+myfactor <- function ( N ) {#
+    F <- M <- 1#
+	repeat {#
+		M <- M+1 #
+		F <- F*M	#
+#		print( F )#
+	    if (M >=N   )  {break}#
+	}#
+	return(F)#
+}
+myfactor(10)
+myfactor <- function ( N, M=1 ) {#
+    F <-  1#
+	repeat {#
+		M <- M+1 #
+		F <- F*M	#
+#		print( F )#
+	    if (M >=N   )  {break}#
+	}#
+	return(F)#
+}
+myfactor(10, 5)
+myfactor(10)
+dna <- sample( bases, 500, replace=T)#
+basefreq <- table(dna)/length(dna)#
+#
+find_codon <- function ( dna, bp1, bp2, bp3)  {#
+	n <- which(dna== bp1 )   # the index position of "a"s in sequence seq1#
+	match2 <- dna[ n + 1 ] == bp2    # does codon position 2 match "t"? #
+	match3 <- dna[ n + 2 ] == bp3  # does codon position 3 match "g"?#
+	match123	<- n[ which( match2 & match3 )]  # index position of all matching codons (where all 3 match)#
+#
+}
+dna
+dna <- sample( c("a", "t", "g", "c"), 500, replace=T)#
+basefreq <- table(dna)/length(dna)#
+#
+find_codon <- function ( dna, bp1, bp2, bp3)  {#
+	n <- which(dna== bp1 )   # the index position of "a"s in sequence seq1#
+	match2 <- dna[ n + 1 ] == bp2    # does codon position 2 match "t"? #
+	match3 <- dna[ n + 2 ] == bp3  # does codon position 3 match "g"?#
+	match123	<- n[ which( match2 & match3 )]  # index position of all matching codons (where all 3 match)#
+#
+}
+dna
+find_codon( dna, "a", "t", "g")
+find_codon <- function ( dna, bp1, bp2, bp3)  {#
+	n <- which(dna== bp1 )   # the index position of "a"s in sequence seq1#
+	match2 <- dna[ n + 1 ] == bp2    # does codon position 2 match "t"? #
+	match3 <- dna[ n + 2 ] == bp3  # does codon position 3 match "g"?#
+	match123	<- n[ which( match2 & match3 )]  # index position of all matching codons (where all 3 match)#
+    return( match123)#
+}
+find_codon( dna, "a", "t", "g")
+dna
+find_codon( dna, "t", "a", "g")
