@@ -1,0 +1,99 @@
+## HW4 and using sapply at end
+
+### Script to analyze spectrophotometer files#
+#
+## Function read.spec reads in data, #
+## removes header and footer, #
+## and subsets to wavelength range 300 - 750 #
+#
+## Edit read.spec: add an argument for the path "Data/"#
+## and edit the function to use the path if specified. #
+## Look at help page for paste() function#
+#
+read.spec <- function ( myfile )  {   #
+	dat <- read.table(file=myfile, skip=17, comment.char=">")#
+	names(dat) <- c("lambda", "intensity")#
+	dat <- dat[ dat$lambda >= 300 & dat$lambda <= 750,   ]#
+	return (dat)#
+}#
+#
+plot.spec <- function( X ) {#
+#
+    plot(X, type="l")#
+	max_intensity <- max(X$intensity)   # use indexing to find the lambda @max intensity#
+	max_lambda <- X$lambda[ X$intensity  == max_intensity ]#
+    points(max_lambda, max_intensity, col="red", cex=3, pch=19)  #
+    return(data.frame(lambda=max_lambda, max_intensity=max_intensity))#
+} #
+#
+readplot.spec <- function( file, ... ) {   ## A wrapper function to run both functions#
+	dat <- read.spec(file, ...)#
+	out <- plot.spec(dat)#
+return(out)#
+}#
+#
+### Start of the code to execute program#
+#
+myfiles <- list.files(path="Data")#
+myfiles <- grep("irr.txt", myfiles, value=TRUE)#
+myfiles <- paste("Data", myfiles, sep="/")#
+#
+pdf(file="specout.pdf")#
+#
+out <- readplot.spec (myfiles[1])#
+out <- rbind(out, readplot.spec (myfiles[2]))#
+out <- rbind(out, readplot.spec (myfiles[3]))#
+out <- rbind(out, readplot.spec (myfiles[4]))#
+#
+dev.off()
+myfiles
+sapply( myfiles, readplot.spec   )
+out <- sapply( myfiles, readplot.spec   )
+class(out)
+dim(out)
+out
+t(out)
+
+
+#### Linear Regression Example
+
+
+require(MASS)   ## needed for ginv()
+x <- c(1:4)
+y <- c(1,3,2,4)
+plot(x,y, ylim=c(0, 5), xlim=c(0,5))
+abline(a=0, b=1)
+abline( lm(y ~ x), col="red")
+x <- cbind( 1, x)
+n <- nrow(x)
+k <- ncol(x)
+n
+k
+
+xpx <- t(x) %*% x
+xpx
+xpy <- t(x) %*% y
+xpy
+ypy <- t(y) %*% y
+ypy
+xpxi <- ginv(xpx)
+xpxi
+
+bbeta <- xpxi %*% xpy
+bbeta
+SSE <- ypy - t(bbeta) %*% xpy
+SSE
+MSE <- SSE/(n-k)
+MSE
+
+stddev <- sqrt(MSE)
+covb <- xpxi * c(MSE, MSE)
+covb#
+stderr <- sqrt(diag(covb))#
+stderr#
+tratio <- bbeta/stderr#
+tratio#
+dfe <- n-k
+pval <- 1-pf(tratio^2, 1, dfe)
+
+
