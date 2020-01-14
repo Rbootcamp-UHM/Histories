@@ -16,16 +16,17 @@ Git is a free open-source version control system. You can copy repositories of f
 1. Install Git if you havenʻt aready https://git-scm.com/downloads
 2. **Mac USERS** open your Terminal.app (look under Applications > Utilities)  
    **PC USERS** open your "Command Prompt". Either search for "Command Prompt" or look for it under your Start Menu > Programs list. If you canʻt find it [read this](https://www.digitalcitizen.life/7-ways-launch-command-prompt-windows-7-windows-8)
-3. Navigate to your Rclass working directory. (The terminal window or the command prompt window is your terminal-interface into your computer.) If you are on a Mac and you created it at the top level of your user directory it would be: 
+3. Navigate to your Rclass working directory. (The terminal window or the command prompt window is your terminal-interface into your computer.) If you are on a Mac and you created it your Documents directory it would be: 
 
    ```
-   cd ~/Rclass
+   cd ~/Documents/Rclass
    ```
 
-   On a PC it would be
+   On a PC it would be similar to one of:
 
    ```
-   cd ʻC:/path to my directory/Rclassʻ 
+   cd ʻC:\Documents\Rclassʻ
+   cd ʻC:\Users\myusername\Documents\Rclassʻ
    ```
 
 4. Clone the repository. Type the line below, hit return, and it will create a folder called `Histories` in your working directory that contains a copy of all the files currently at that location on the server. Note this will create a new copy of the whole directory, so you only do this the first time. 
