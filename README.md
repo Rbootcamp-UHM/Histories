@@ -29,7 +29,7 @@ Git is a free open-source version control system. You can copy repositories of f
    cd ʻC:\Users\myusername\Documents\Rclassʻ
    ```
 
-4. Clone the repository. Type the line below, hit return, and it will create a folder called `Histories` in your working directory that contains a copy of all the files currently at that location on the server. Note this will create a new copy of the whole directory, so you only do this the first time. 
+4. Clone the repository. Type the line below, hit return, and it will create a folder called `Histories` in your working directory that contains a copy of all the files currently at that location on the server. **Note this will create a new copy of the whole directory, so you only do this the first time.** 
 
     ```
     git clone https://github.com/Rbootcamp-UHM/Histories.git
