@@ -1,0 +1,55 @@
+?plot
+example(plot)
+require(stats)
+plot(cars)
+cars
+class(cars)
+plot(cars)
+ls
+ls()
+speed <-  cars$speed
+cars$speed
+speed
+dist <- cars$dist
+dist
+plot(speed,dist)
+quartz()
+plot(dist,speed)
+?lm
+lm( dist ~ speed)
+speed.lm <- lm( dist ~ speed)
+lines(speed.lm)
+abline(speed.lm)
+abline(speed.lm, col="red")
+colors()
+plot(dist,speed, cex=2)
+abline(speed.lm, col="red")
+plot(speed, dist cex=2)
+plot(speed, dist, cex=2)
+plot(speed, Dist, cex=2)
+plot(speed, dist, cex=2)
+abline(speed.lm, col="red")
+getwd()
+setwd("./Documents/Rclass")
+getwd()
+write.csv(cars, "cars.csv")
+cars <- read.csv( "cars.csv")
+cars
+?write.csv
+write.csv(cars, "cars.csv", row.names=FALSE)
+cars
+rm(cars)
+cars
+rm(cars)
+ls()
+cars
+cars     # built in dataset#
+#
+speed <-  cars$speed  # save as a vector#
+dist <-  cars$dist
+plot( speed, dist, cex=2)  # plot x,y#
+speed.lm <- lm (dist ~ speed)   # save regression line#
+#
+abline( speed.lm, col="red" )   # plot regression line
+getwd()
+source("cars_script.R")
