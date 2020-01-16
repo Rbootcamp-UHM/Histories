@@ -1,0 +1,183 @@
+?points
+TestChars <- function(sign = 1, font = 1, ...)#
+{#
+   MB <- l10n_info()$MBCS#
+   r <- if(font == 5) { sign <- 1; c(32:126, 160:254)#
+       } else if(MB) 32:126 else 32:255#
+   if (sign == -1) r <- c(32:126, 160:255)#
+   par(pty = "s")#
+   plot(c(-1,16), c(-1,16), type = "n", xlab = "", ylab = "",#
+        xaxs = "i", yaxs = "i",#
+        main = sprintf("sign = %d, font = %d", sign, font))#
+   grid(17, 17, lty = 1) ; mtext(paste("MBCS:", MB))#
+   for(i in r) try(points(i%%16, i%/%16, pch = sign*i, font = font,...))#
+}#
+TestChars()
+pchShow <-#
+  function(extras = c("*",".", "o","O","0","+","-","|","%","#"),#
+           cex = 3, ## good for both .Device=="postscript" and "x11"#
+           col = "red3", bg = "gold", coltext = "brown", cextext = 1.2,#
+           main = paste("plot symbols :  points (...  pch = *, cex =",#
+                        cex,")"))#
+  {#
+    nex <- length(extras)#
+    np  <- 26 + nex#
+    ipch <- 0:(np-1)#
+    k <- floor(sqrt(np))#
+    dd <- c(-1,1)/2#
+    rx <- dd + range(ix <- ipch %/% k)#
+    ry <- dd + range(iy <- 3 + (k-1)- ipch %% k)#
+    pch <- as.list(ipch) # list with integers & strings#
+    if(nex > 0) pch[26+ 1:nex] <- as.list(extras)#
+    plot(rx, ry, type = "n", axes  =  FALSE, xlab = "", ylab = "", main = main)#
+    abline(v = ix, h = iy, col = "lightgray", lty = "dotted")#
+    for(i in 1:np) {#
+      pc <- pch[[i]]#
+      ## 'col' symbols with a 'bg'-colored interior (where available) :#
+      points(ix[i], iy[i], pch = pc, col = col, bg = bg, cex = cex)#
+      if(cextext > 0)#
+          text(ix[i] - 0.3, iy[i], pc, col = coltext, cex = cextext)#
+    }#
+  }#
+#
+pchShow()
+plot(petalL, petalW, pch=19, col="yellow")
+plot(petalL, petalW, pch=19, col="yellow", cex=2)
+rgb("yellow")
+col2rgb("yellow")
+col2rgb("yellow", apha=255*.5)
+col2rgb("yellow", apha=(255*.5))
+?col2rgb
+col2rgb("yellow", apha=T)
+col2rgb("yellow", apha=TRUE)
+col2rgb("yellow")
+?rgb
+rgb(col2rgb("yellow"), maxColorValue=125)
+rgb(col2rgb("yellow"), alpha=255*.5)
+rgb(col2rgb("yellow"), alpha=.5)
+rgb(col2rgb("yellow"), alpha=c(125,125,125))
+rgb(col2rgb("yellow")*.5)
+col2rgb
+?cor2rgb
+?col2rgb
+col2rgb
+col2rgb("yellow")
+col2rgb("yellow")*.5
+round(col2rgb("yellow")*.5)
+rgb(round(col2rgb("yellow")*.5))
+rgb(1,1,1)
+col2rgb("yellow")/255
+rgb(col2rgb("yellow")/255, alpha=.5)
+rgb(t(col2rgb("yellow")/255), alpha=.5)
+rgb(t(col2rgb("yellow")/255))
+plot(petalL, petalW, pch=19, col=rgb(t(col2rgb("yellow")/255), alpha=.5), cex=2)
+plot(petalL, petalW, pch=19, col=rgb(t(col2rgb("yellow")/255), alpha=.3), cex=2)
+## function to make points transparent#
+make_transparent <- function(mycolor="yellow", frac=.3){ rgb(t(col2rgb(mycolor)/255), alpha=frac) }#
+plot(petalL, petalW, pch=19, col=make_transparent("yellow",.3), cex=2)
+plant <- letters[1:5]
+mass <- 1:5
+rbind(plant, mass)
+class(rbind(plant, mass))
+class(cbind(plant, mass))
+cbind(plant, mass)
+data.frame(plant, mass)
+?matrix
+x <- 1:6
+x <- c(1,2,3,4,5,6)
+x
+matrix( x, nrow=3)
+matrix( x, nrow=3, byrow=F)
+?mat
+?matrix
+matrix( x, nrow=3, byrow=T)
+mat <- matrix( x, nrow=3, byrow=T)
+mat
+dat <- data.frame(mat)
+dat
+names(dat) <- c("height", "weight")
+dat
+dat$height
+class(dat$height)
+class(dat)
+dat["height"]
+class(dat["height"])
+class(dat$height)
+dat$height[1]
+dat$height[2]
+dat$height[3]
+dat$height[4]
+dat$height[1:2]
+dat$height[c(1,3)]
+dat$height
+c(1,3)
+dat$height[c("weight", "height")]
+dat[c("weight", "height")]
+getwd()
+setwd("Documents/Rclass")
+getwd()
+setwd("Iris-repo")
+getwd()
+save(dat, "temp.Rdata")
+save(dat, file="temp.Rdata")
+iris			# A built-in dataframe#
+dim(iris)	# dimensions#
+names(iris)
+plot(petalL, petalW)
+species <- iris$Species   #
+petalL <- iris$Petal.Length#
+petalW <- iris$Petal.Width
+plot(petalL, petalW)
+?plot
+plot(petalL, petalW, col="red")
+plot(petalL, petalW, col="red", pch=19)
+?points
+pchShow <-#
+  function(extras = c("*",".", "o","O","0","+","-","|","%","#"),#
+           cex = 3, ## good for both .Device=="postscript" and "x11"#
+           col = "red3", bg = "gold", coltext = "brown", cextext = 1.2,#
+           main = paste("plot symbols :  points (...  pch = *, cex =",#
+                        cex,")"))#
+  {#
+    nex <- length(extras)#
+    np  <- 26 + nex#
+    ipch <- 0:(np-1)#
+    k <- floor(sqrt(np))#
+    dd <- c(-1,1)/2#
+    rx <- dd + range(ix <- ipch %/% k)#
+    ry <- dd + range(iy <- 3 + (k-1)- ipch %% k)#
+    pch <- as.list(ipch) # list with integers & strings#
+    if(nex > 0) pch[26+ 1:nex] <- as.list(extras)#
+    plot(rx, ry, type = "n", axes  =  FALSE, xlab = "", ylab = "", main = main)#
+    abline(v = ix, h = iy, col = "lightgray", lty = "dotted")#
+    for(i in 1:np) {#
+      pc <- pch[[i]]#
+      ## 'col' symbols with a 'bg'-colored interior (where available) :#
+      points(ix[i], iy[i], pch = pc, col = col, bg = bg, cex = cex)#
+      if(cextext > 0)#
+          text(ix[i] - 0.3, iy[i], pc, col = coltext, cex = cextext)#
+    }#
+  }#
+#
+pchShow()
+plot(petalL, petalW, col="red", pch=19)
+rainbow(5)
+plot(petalL, petalW, col=rainbow(5), pch=19)
+plot(petalL, petalW, col=rainbow(5), pch=19, cex=3)
+iris
+rep( "red", 50)
+plot(petalL, petalW, col=rep("red", 50), pch=19, cex=3)
+?rep
+rep(c("red", "green", "blue"), times=3)
+rep(c("red", "green", "blue"), each=3)
+species
+plot(petalL, petalW, col=rep(c("red", "green", "blue"), each=50), pch=19, cex=3)
+species=="setosa"
+cbind(species=="setosa", species)
+species
+species=="setosa"
+species=="viriginica"
+species
+species=="virginica"
+species=="versicolor"
+?c
