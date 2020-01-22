@@ -1,0 +1,118 @@
+x <- 64
+tol <- 1
+tol <- .01
+x
+myguess <- 10
+x/myguess
+approxy <- x/myguess
+newguess <- (myguess+approxy)/2
+newguessa
+newguess
+error = newguess - approxy
+error
+error < tol
+approxy <- x/newguess
+approxy
+error < tol
+error = newguess - approxy
+error < tol
+approxy
+newguess <- (newguess+approxy)/2 #
+error = newguess - approxy#
+error < tol
+newguess#
+error
+approxy <- x/newguess#
+newguess <- (newguess+approxy)/2 #
+error = newguess - approxy#
+error < tol#
+newguess#
+error
+approxy <- x/newguess#
+newguess <- (newguess+approxy)/2 #
+error = newguess - approxy#
+error < tol#
+newguess#
+error
+x <- 64#
+tol <- .01#
+x#
+myguess <- 10#
+#
+approxy <- x/myguess ##
+newguess <- (myguess+approxy)/2 #
+error = newguess - approxy#
+error < tol#
+#
+while ( error > tol ) { #
+  approxy <- x/newguess#
+  newguess <- (newguess+approxy)/2 #
+  error = newguess - approxy#
+  print(error < tol) #
+  print(newguess)#
+  print(error)#
+}
+x <- 64#
+tol <- .000001#
+x#
+myguess <- 10#
+#
+approxy <- x/myguess ##
+newguess <- (myguess+approxy)/2 #
+error = newguess - approxy#
+error < tol#
+#
+while ( error > tol ) { #
+  approxy <- x/newguess#
+  newguess <- (newguess+approxy)/2 #
+  error = newguess - approxy#
+  print(error < tol) #
+  print(newguess)#
+  print(error)#
+}
+x <- 64#
+tol <- .000001#
+x#
+myguess <- 10#
+newguess <- myguess#
+#
+while ( error > tol ) { #
+  approxy <- x/newguess#
+  newguess <- (newguess+approxy)/2 #
+  error = newguess - approxy#
+  print(error < tol) #
+  print(newguess)#
+  print(error)#
+}
+myguess
+newguess
+error <- tol + 1
+while ( error > tol ) { #
+  approxy <- x/newguess#
+  newguess <- (newguess+approxy)/2 #
+  error = newguess - approxy#
+  print(error < tol) #
+  print(newguess)#
+  print(error)#
+}
+mysqrt <- function( x=64, tol=.00001, myguess=10){#
+#
+	newguess <- myguess#
+	error <- tol + 1#
+#
+	while ( error > tol ) { #
+	  approxy <- x/newguess#
+	  newguess <- (newguess+approxy)/2 #
+	  error = newguess - approxy#
+	  print(error < tol) #
+	  print(newguess)#
+	  print(error)#
+	}#
+#
+}
+mysqrt()
+mysqrt(9)
+source("mysqrt.R")
+source("mysqrt.R")
+mysqrt(9)
+mysqrt(10)
